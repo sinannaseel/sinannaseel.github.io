@@ -1,17 +1,17 @@
-- name: Dr. Richard Feynman
-  photo: headshot.jpg
-  info: Richard C. Tolman Professor, California Institute of Technology
-  email: richard@university.edu
-  github: https://github.com/
-  researchgate: https://www.researchgate.net/
-  scholar: https://scholar.google.com/citations?user=B7vSqZsAAAAJ
-  cv: cv/cv.pdf
+- name: Naseel Sinan
+  photo: selfie.JPG
+  info: Naseel Sinan, PhD Student, University of Manchester
+  email: naseel.sinan@manchester.ac.uk
+  github: https://github.com/sinannaseel
+  # researchgate: https://www.researchgate.net/
+  # scholar: https://scholar.google.com/citations?user=B7vSqZsAAAAJ
+  # cv: cv/cv.pdf
   # Change the items in "education" you have (up to 6)
   education:
     [
-      "(1942) Ph.D. Physics, Princeton University",
-      "(1939) B.S. Physics, Massachusetts Institute of Technology",
+      "(2028) Ph.D. Robottics, University of Manchester",
+      "(2024) MSc. Robotics, University of Manchester",
     ]
 
   educationshort:
-    ["(1942) Ph.D. Physics, Princeton", "(1939) B.S. Physics, MIT"]
+    ["(2028) Ph.D. Robotics, UoM", "(2024) MSc. Robotics, UoM"]
