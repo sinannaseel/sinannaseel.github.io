@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="note">
+    <header>
+        <h1>{{ page.title }}</h1>
+        {% if page.date %}
+        <p class="meta">Last updated: {{ page.date | date: "%B %d, %Y" }}</p>
+        {% endif %}
+    </header>
+
+    <div class="content">
+        {{ content }}
+    </div>
+
+    <footer>
+        <a href="{{ '/notes' | relative_url }}">&larr; Back to all notes</a>
+    </footer>
+</article>

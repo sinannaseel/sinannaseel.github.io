@@ -1,0 +1,34 @@
+title: Research in Robotic Manipulation
+description: Task and Motion Planning for Rearrangement in Confined Spaces
+author: Naseel Sinan
+email: naseelsinan10@gmail.com
+baseurl: ""
+url: "https://sinannaseel.github.io"
+
+# Build settings
+markdown: kramdown
+theme: minima
+permalink: pretty
+
+# Collections
+collections:
+  notes:
+    output: true
+    permalink: /notes/:title/
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research
+  - title: Notes
+    url: /notes
+  - title: Publications
+    url: /publications
+  - title: Contact
+    url: /contact
+
+# Social links
+github_username: https://github.com/sinannaseel
+linkedin_username: https://uk.linkedin.com/in/naseel-sinan
