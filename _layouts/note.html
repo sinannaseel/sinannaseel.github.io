@@ -4,9 +4,18 @@ layout: default
 <article class="note">
     <header>
         <h1>{{ page.title }}</h1>
-        {% if page.date %}
-        <p class="meta">Last updated: {{ page.date | date: "%B %d, %Y" }}</p>
-        {% endif %}
+        <div class="meta">
+            {% if page.date %}
+            <span>Last updated: {{ page.date | date: "%B %d, %Y" }}</span>
+            {% endif %}
+            {% if page.tags %}
+            <div>
+                {% for tag in page.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
     </header>
 
     <div class="content">
