@@ -3,28 +3,35 @@ layout: default
 title: Home
 ---
 
-# Welcome to My Research
+## About me
 
-![Research Banner](/assets/images/banner.jpg)
-*Caption: Robot manipulating objects in confined space*
-
-I am working on robotic manipulation in confined spaces using Task and Motion Planning (TAMP) for rearrangement of items.
-
-## Current Research
-
-<div class="section-card">
-
-### Task and Motion Planning for Rearrangement
-
-![TAMP Diagram](/assets/images/research/tamp-diagram.png)
+I am a researcher working on **robotic manipulation in confined spaces** using Task and Motion Planning (TAMP) for rearrangement of items. I am currently based at [Your University].
 
 My research focuses on developing algorithms that enable robots to efficiently reorganize objects in cluttered, constrained environments.
 
-Key areas:
-- Optimization in confined spaces
-- Entropy-based clutter measures
-- Sequential rearrangement strategies
+## Research
 
-</div>
+My work focuses on confined space manipulation. Key areas include:
 
-[Read more about my research →](/research)
+### Core Research Areas
+
+- **Task and Motion Planning:** TAMP algorithms for complex rearrangement
+- **Confined Space Manipulation:** Robots working in constrained environments
+- **Rearrangement Strategies:** Sequential, non-monotonous approaches
+- **Clutter Metrics:** Entropy-based measures
+
+### Technical Focus
+
+- Diffusion models for motion generation
+- Reinforcement learning
+- Convex and combinatorial optimization
+- Sampling-based planning
+- Probabilistic robotics
+
+## Publications
+
+Coming soon...
+
+## Contact
+
+Email: [your.email@domain.com](mailto:your.email@domain.com)
