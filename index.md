@@ -37,7 +37,7 @@ My research focuses on developing robotics solutions in extreme environments lik
 <img src="/assets/images/outreach/pint-of-science-3.jpeg" alt="Pint of Science UK 2025 - Pint of Science Team">
 </div>
 
-<h4 style="text-decoration: underline;">Optimization of Summer School, Greece</h4>
+<h4 style="text-decoration: underline;">Optimization in Robotics, Summer School, Greece</h4>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
 <img src="/assets/images/outreach/greece-1.jpg" alt="Optimization Summer School Greece">
