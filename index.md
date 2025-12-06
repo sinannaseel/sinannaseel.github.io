@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-## About me
+## About Me
 
 I am a PhD researcher at [The University of Manchester](https://www.manchester.ac.uk/) advised by [Dr. Murilo Marinho](https://mmmarinho.github.io/) and Co-supervised by [Dr. Tingting Mu](https://personalpages.manchester.ac.uk/staff/tingting.mu/Site/About_Me.html) and working on **robotic manipulation in confined spaces** using Task and Motion Planning (TAMP) for rearrangement of items. I am currently based at [RAICo](https://raico.org/), a robotics facilty at Whitehaven.
 
