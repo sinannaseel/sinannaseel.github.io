@@ -53,7 +53,3 @@ My research focuses on developing robotics solutions in extreme environments lik
 <img src="/assets/images/outreach/tokyo-2.jpg" alt="GMSI Program Activities">
 <img src="/assets/images/outreach/tokyo-3.jpeg" alt="GMSI Program Activities">
 </div>
-
-## Contact
-
-Email: [naseelsinan10@gmail.com](mailto:naseelsinan10@gmail.com)
