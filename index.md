@@ -5,7 +5,7 @@ title: Home
 
 ## About Me
 
-A PhD researcher at [The University of Manchester](https://www.manchester.ac.uk/) advised by [Dr. Murilo Marinho](https://mmmarinho.github.io/) and Co-supervised by [Dr. Tingting Mu](https://personalpages.manchester.ac.uk/staff/tingting.mu/Site/About_Me.html) and working on **robotic manipulation in confined spaces** using Task and Motion Planning (TAMP) for rearrangement of items. I am currently based at [RAICo](https://raico.org/), a robotics facilty at Whitehaven.
+PhD researcher at [The University of Manchester](https://www.manchester.ac.uk/) advised by [Dr. Murilo Marinho](https://mmmarinho.github.io/) and Co-supervised by [Dr. Tingting Mu](https://personalpages.manchester.ac.uk/staff/tingting.mu/Site/About_Me.html) and working on **robotic manipulation in confined spaces** using Task and Motion Planning (TAMP) for rearrangement of items. Currently based at [RAICo](https://raico.org/), a robotics facilty at Whitehaven.
 
 My research focuses on developing robotics solutions in extreme environments like the nuclear industry, working in tandem with RAICo partners in the UK. I mainly deal with using robotic manipulators inside confined spaces, analogous to gloveboxes at nuclear facilities, and use optimization, sampling, and learning methods to achieve task and motion planning tasks. Maintaining the clutter, rearrangement, and manipulation of highly redundant robots are my main goals in such environments.
 

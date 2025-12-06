@@ -80,3 +80,7 @@ title: Study Notes
     </div>
 
 </div>
+
+# Resource:
+
+UR3e urdf file : github link
