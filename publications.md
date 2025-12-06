@@ -15,23 +15,31 @@ title: Publications
 [Dr. Ahmed Fahmy Soliman](https://www.linkedin.com/in/ahmed-fahmy-soliman-984a57216/), [Naseel Sinan](https://www.linkedin.com/in/naseel-sinan), and [Dr. Murilo Marinho](https://www.linkedin.com/in/murilo-marques-marinho-046178252/)  
 *🏆 Best Research Poster Award*
 
----
+[//]: # (---)
 
-### Conference Papers
+[//]: # ()
+[//]: # (### Conference Papers)
 
-Coming soon...
+[//]: # ()
+[//]: # (Coming soon...)
 
----
+[//]: # ()
+[//]: # (---)
 
-### Journal Articles
+[//]: # ()
+[//]: # (### Journal Articles)
 
-Coming soon...
+[//]: # ()
+[//]: # (Coming soon...)
 
----
+[//]: # ()
+[//]: # (---)
 
-### Technical Reports
+[//]: # ()
+[//]: # (### Technical Reports)
 
-Coming soon...
+[//]: # ()
+[//]: # (Coming soon...)
 
 ---
 
