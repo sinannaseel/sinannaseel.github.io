@@ -9,6 +9,14 @@ title: Research
 
 Developing TAMP algorithms that enable robotic manipulators to re-arrange objects in constrained environments. 
 
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+<img src="/assets/images/outreach/tamp-1.jpg" alt="Pint of Science UK 2025 - Audience Interaction">
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+<img src="/assets/images/outreach/tamp-2.jpg" alt="Pint of Science UK 2025 - Audience Interaction">
+<img src="/assets/images/outreach/tamp-3.jpg" alt="Pint of Science UK 2025 - Pint of Science Team">
+</div>
+
 ### DQ Robotics Framework
 
 **Key advantages of dual quaternions:**
@@ -64,20 +72,5 @@ Developing TAMP algorithms that enable robotic manipulators to re-arrange object
 * Probabilistic Robotics by Fox
 * Convex Optimization by Stephan Boyd
 * RL by Sutton
- 
-
-## Hardware & Implementation
-
-### Computing Infrastructure
-
-- **NVIDIA DGX Systems:** Large-scale training and simulation
-- **GPU Clusters:** Parallel computation for optimization
-- **Real-time Systems:** Low-latency control implementation
-
-### Robotic Platforms
-
-- **Redundant Manipulators:** High-DOF systems (LongBoy project)
-- **Industrial Grippers:** Various end-effector configurations
-- **Sensor Integration:** Force/torque, vision, tactile sensing
 
 
