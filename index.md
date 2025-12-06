@@ -57,11 +57,3 @@ My research focuses on developing robotics solutions in extreme environments lik
 ## Contact
 
 Email: [naseelsinan10@gmail.com](mailto:naseelsinan10@gmail.com)
-
-### Technical Focus
-
-- Diffusion models for motion generation
-- Reinforcement learning
-- Convex and combinatorial optimization
-- Sampling-based planning
-- Probabilistic robotics
