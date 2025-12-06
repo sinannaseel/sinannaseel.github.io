@@ -5,13 +5,15 @@ title: Publications
 
 # Publications & Posters
 
-**Path Planning for Glovebox Tasks Using the Redundant Robot LongBoy**  
+1. **(Semi-) Autonomous Control of Manipulator Robots in Challenging Environments**
+
+    <a href="/assets/poster/(Semi-)AutonomousControlofManipulatorRobotsinChallenging Environments.pdf" target="_blank" rel="noopener noreferrer" class="pdf-button">
+        Link to the Poster
+    </a>
+
+2. **Path Planning for Glovebox Tasks Using the Redundant Robot LongBoy**  
 [Dr. Ahmed Fahmy Soliman](https://www.linkedin.com/in/ahmed-fahmy-soliman-984a57216/), [Naseel Sinan](https://www.linkedin.com/in/naseel-sinan), and [Dr. Murilo Marinho](https://www.linkedin.com/in/murilo-marques-marinho-046178252/)  
 *🏆 Best Research Poster Award*
-
-<div style="margin: 2rem 0;">
-<img src="/assets/images/research/poster.jpg" alt="Research Poster" style="max-width: 800px; width: 100%;">
-</div>
 
 ---
 

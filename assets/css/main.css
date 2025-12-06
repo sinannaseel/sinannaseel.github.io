@@ -666,3 +666,48 @@ details li {
         font-size: 0.85rem;
     }
 }
+/* 1. CSS for the List Item to align items horizontally */
+.publication-item {
+    /* Removes the default bullet point from the list item */
+    list-style-type: none;
+
+    /* Makes the children (Heading and Button) align on one line */
+    display: flex;
+
+    /* Pushes the button to the far right */
+    justify-content: space-between;
+
+    /* Vertically aligns the text of the heading and the button */
+    align-items: center;
+
+    /* Adds space below each list item */
+    margin-bottom: 15px;
+}
+
+/* 2. CSS for the Button (same as before, but ensure it's present) */
+.pdf-button {
+    /* Basic Button Look */
+    display: inline-block;
+    padding: 8px 15px; /* Slightly smaller padding for a cleaner look */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+
+    /* Colors */
+    background-color: #007bff;
+    color: white;
+
+    /* Font */
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    /* Optional: Ensure the button doesn't wrap */
+    flex-shrink: 0;
+    margin-left: 20px; /* Space between heading and button */
+}
+
+.pdf-button:hover {
+    background-color: #0056b3;
+}
