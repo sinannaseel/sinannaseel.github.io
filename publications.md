@@ -3,27 +3,38 @@ layout: default
 title: Publications
 ---
 
-# Study Notes
+# Publications & Posters
 
-My learning journey and revision notes on topics relevant to my research.
+**Path Planning for Glovebox Tasks Using the Redundant Robot LongBoy**  
+[Dr. Ahmed Fahmy Soliman](https://www.linkedin.com/in/ahmed-fahmy-soliman-984a57216/), [Naseel Sinan](https://www.linkedin.com/in/naseel-sinan), and [Dr. Murilo Marinho](https://www.linkedin.com/in/murilo-marques-marinho-046178252/)  
+*🏆 Best Research Poster Award*
 
-## Core Topics
+<div style="margin: 2rem 0;">
+<img src="/assets/images/research/poster.jpg" alt="Research Poster" style="max-width: 800px; width: 100%;">
+</div>
 
-{% assign core_topics = site.notes | where: "category", "core" %}
-{% for note in core_topics %}
-- [{{ note.title }}]({{ note.url | relative_url }}){% if note.excerpt %} - {{ note.excerpt | strip_html | truncatewords: 15 }}{% endif %}
-{% endfor %}
+---
 
-## Rearrangement Techniques
+### Conference Papers
 
-{% assign rearrangement = site.notes | where: "category", "rearrangement" %}
-{% for note in rearrangement %}
-- [{{ note.title }}]({{ note.url | relative_url }})
-{% endfor %}
+Coming soon...
 
-## Specialized Topics
+---
 
-{% assign specialized = site.notes | where: "category", "specialized" %}
-{% for note in specialized %}
-- [{{ note.title }}]({{ note.url | relative_url }})
-{% endfor %}
+### Journal Articles
+
+Coming soon...
+
+---
+
+### Technical Reports
+
+Coming soon...
+
+---
+
+### Talks & Presentations
+
+- **Pint of Science UK 2025** - Public engagement talk on robotics research
+- **Optimization Summer School, Greece** - Student presentation
+- **GMSI Summer Camp, University of Tokyo** - Research presentation

@@ -26,6 +26,8 @@ navigation:
     url: /
   - title: Research
     url: /research
+  - title: Guides
+    url: /guides
   - title: Notes
     url: /notes
   - title: Publications
