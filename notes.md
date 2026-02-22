@@ -6,29 +6,34 @@ title: Study Notes
 # Notes
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 2rem 0;">
-<a href="/notes/reinforcement_learning.md" class="guide-card">
-<h3>Reinforcement learning</h3>
-<p>Reinforcement learning done</p>
+<a href="/notes/reinforcement_learning/" class="guide-card">
+<h3>Reinforcement Learning</h3>
+<p>Study notes on reinforcement learning concepts and applications</p>
+<span class="guide-meta">Machine Learning</span>
 </a>
 
-<a href="/notes/diffusion_models.md" class="guide-card">
-<h3>Diffusion models</h3>
-<p>Diffusion models learning now</p>
+<a href="/notes/diffusion_models/" class="guide-card">
+<h3>Diffusion Models</h3>
+<p>Research notes on diffusion-based generative models</p>
+<span class="guide-meta">Deep Learning • Generative AI</span>
 </a>
 
-<a href="/notes/cpp.md" class="guide-card">
-<h3>Cpp</h3>
-<p>yet2</p>
+<a href="/notes/cpp/" class="guide-card">
+<h3>C++</h3>
+<p>Programming concepts and best practices in C++</p>
+<span class="guide-meta">Programming • In Progress</span>
 </a>
 
-<a href="/notes/convex_optimization.md" class="guide-card">
+<a href="/notes/convex_optimization/" class="guide-card">
 <h3>Convex Optimization</h3>
-<p>yet2</p>
+<p>Mathematical foundations of convex optimization theory</p>
+<span class="guide-meta">Mathematics • In Progress</span>
 </a>
 
-<a href="/notes/combinatorial_optimization.md" class="guide-card">
+<a href="/notes/combinatorial_optimization/" class="guide-card">
 <h3>Combinatorial Optimization</h3>
-<p>yet2</p>
+<p>Algorithms and techniques for combinatorial problems</p>
+<span class="guide-meta">Optimization • In Progress</span>
 </a>
 </div>
 
