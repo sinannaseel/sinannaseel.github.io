@@ -14,12 +14,6 @@ markdown: kramdown
 theme: minima
 permalink: pretty
 
-# Collections
-collections:
-  notes:
-    output: true
-    permalink: /notes/:title/
-
 # Plugins
 plugins:
   - jekyll-feed
@@ -32,10 +26,8 @@ navigation:
     url: /
   - title: Research
     url: /research
-  - title: Guides
-    url: /guides
-  - title: Notes
-    url: /notes
+  - title: Helper
+    url: /helper
   - title: Publications
     url: /publications
   - title: Contact
