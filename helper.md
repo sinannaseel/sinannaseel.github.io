@@ -3,24 +3,130 @@ layout: default
 title: Helper
 ---
 
-# Helper Reference
+<style>
+.helper-page h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+.helper-page .subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+.helper-section {
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.helper-section > summary {
+  list-style: none;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  user-select: none;
+}
+.helper-section > summary::-webkit-details-marker { display: none; }
+.helper-section > summary::after {
+  content: '+';
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+.helper-section[open] > summary::after { content: '−'; }
+.helper-section > summary:hover { background: var(--bg-secondary); }
+.helper-section-body {
+  padding: 0.5rem 0.75rem 0.75rem;
+  background: var(--bg-primary);
+}
+.helper-article {
+  margin-bottom: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.helper-article > summary {
+  list-style: none;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-secondary);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  user-select: none;
+}
+.helper-article > summary::-webkit-details-marker { display: none; }
+.helper-article > summary::after {
+  content: '›';
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+.helper-article[open] > summary {
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+}
+.helper-article[open] > summary::after { content: '›'; transform: rotate(90deg); display: inline-block; }
+.helper-article > summary:hover { color: var(--text-primary); }
+.helper-article-body {
+  padding: 1rem 1.25rem;
+  background: var(--bg-primary);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+.helper-article-body pre {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+  font-size: 0.82rem;
+}
+.helper-article-body code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+.helper-article-body p { margin-bottom: 0.6rem; }
+.helper-article-body ul, .helper-article-body ol {
+  padding-left: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+.helper-article-body strong { color: var(--text-primary); }
+.helper-article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.85rem;
+}
+.helper-article-body th, .helper-article-body td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+.helper-article-body th { background: var(--bg-secondary); color: var(--text-primary); }
+</style>
 
-Personal cheatsheet for tools, hardware, and workflows.
+<div class="helper-page">
+<h1>Helper</h1>
+<p class="subtitle">Personal cheatsheet — click to expand.</p>
 
----
+<details class="helper-section">
+<summary>Simulators</summary>
+<div class="helper-section-body">
 
-- [Simulators](#simulators)
-- [Hardware](#hardware)
-- [How Tos](#how-tos)
-- [Dev Tools](#dev-tools)
-
----
-
-## Simulators
-
-<img src="/assets/images/notes/simulators.png" alt="Simulators overview" style="width:100%; max-height:220px; object-fit:cover; border-radius:8px; margin-bottom:1.5rem;">
-
-### PyBullet
+<details class="helper-article">
+<summary>PyBullet</summary>
+<div class="helper-article-body">
 
 Lightweight physics engine, fast to get running. Good for quick prototyping and RL environments.
 
@@ -34,7 +140,7 @@ pip install pybullet
 import pybullet as p
 import pybullet_data
 
-physicsClient = p.connect(p.GUI)          # or p.DIRECT for headless
+physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0, 0, -9.81)
 planeId = p.loadURDF("plane.urdf")
@@ -46,14 +152,16 @@ for _ in range(1000):
 p.disconnect()
 ```
 
-**Learning / RL**
-- Use with `gymnasium` via custom `Env` wrappers — override `reset()`, `step()`, `render()`
-- PyBullet has built-in `pybullet_envs` (legacy), but wrapping your own URDF is better practice
-- Control loop: `applyExternalForce`, `setJointMotorControl2` for torque/velocity/position control
+**RL**
+- Wrap in `gymnasium.Env` — override `reset()`, `step()`, `render()`
+- Control: `applyExternalForce`, `setJointMotorControl2`
 
----
+</div>
+</details>
 
-### CoppeliaSim
+<details class="helper-article">
+<summary>CoppeliaSim</summary>
+<div class="helper-article-body">
 
 Feature-rich simulator (formerly V-REP). Good for complex scenes and hardware-in-the-loop.
 
@@ -74,17 +182,19 @@ pos = sim.getObjectPosition(handle, sim.handle_world)
 sim.stopSimulation()
 ```
 
-**Learning / RL**
-- Run CoppeliaSim headless: `coppeliaSim -h`
-- Connect via ZMQ, wrap in a `gymnasium.Env` — `step()` calls `sim.step()` to advance one frame
-- Use `sim.setJointTargetVelocity` / `sim.setJointTargetPosition` for joint control
-- Scene state reset via `sim.stopSimulation()` → `sim.startSimulation()`
+**RL**
+- Headless: `coppeliaSim -h`
+- Wrap in `gymnasium.Env`, `step()` calls `sim.step()`
+- Reset: `sim.stopSimulation()` → `sim.startSimulation()`
 
----
+</div>
+</details>
 
-### MuJoCo
+<details class="helper-article">
+<summary>MuJoCo</summary>
+<div class="helper-article-body">
 
-High-accuracy physics, the standard for robotics learning research. Maintained by Google DeepMind.
+High-accuracy physics, standard for robotics research. Maintained by Google DeepMind.
 
 **Install**
 ```bash
@@ -106,15 +216,19 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
         viewer.sync()
 ```
 
-**Learning / RL**
-- Gymnasium wraps MuJoCo environments directly: `gymnasium.make("HalfCheetah-v4")`
-- For custom robots: define a `.xml` (MJCF) model, wrap in `gymnasium.Env`
-- `mujoco.mj_step` advances physics; read `data.qpos`, `data.qvel`, `data.sensordata`
-- For manipulation: use `data.ctrl` to set actuator values
+**RL**
+- Built-in envs: `gymnasium.make("HalfCheetah-v4")`
+- Custom: define `.xml` (MJCF), wrap in `gymnasium.Env`
+- Read: `data.qpos`, `data.qvel`; control: `data.ctrl`
 
-**MuJoCo XLA (MJX)**
+</div>
+</details>
 
-MJX runs MuJoCo physics entirely on GPU/TPU via JAX. Enables massively parallel simulation for fast RL training.
+<details class="helper-article">
+<summary>MuJoCo XLA (MJX)</summary>
+<div class="helper-article-body">
+
+Runs MuJoCo on GPU/TPU via JAX. Massively parallel simulation for fast RL training.
 
 ```bash
 pip install mujoco-mjx
@@ -123,102 +237,92 @@ pip install mujoco-mjx
 ```python
 import mujoco
 from mujoco import mjx
-import jax
-import jax.numpy as jnp
+import jax, jax.numpy as jnp
 
 model = mujoco.MjModel.from_xml_path("model.xml")
-mx    = mjx.put_model(model)        # move model to device
-dx    = mjx.make_data(mx)           # create data on device
+mx = mjx.put_model(model)
+dx = mjx.make_data(mx)
 
-# JIT-compile and vmap for parallel envs
 @jax.jit
 @jax.vmap
 def step(data):
     return mjx.step(mx, data)
 
-# Batch N environments in one forward pass
 batch = jax.vmap(lambda _: mjx.make_data(mx))(jnp.arange(4096))
 batch = step(batch)
 ```
 
-**Key points:**
-- Only differentiable/JAX-compatible operations — no OpenGL rendering in MJX itself
-- Use standard MuJoCo viewer for visualisation by copying data back to CPU: `mjx.get_data(model, dx)`
-- Brax (DeepMind) is built on MJX — check their RL training loops for reference
-- Not all MuJoCo features supported yet (check MJX docs for support table)
+- Copy back to CPU for visualisation: `mjx.get_data(model, dx)`
+- Brax is built on MJX — good reference for RL loops
 
----
+</div>
+</details>
 
-## Hardware
+</div>
+</details>
 
-### Robotiq 2F-85 Gripper
+<details class="helper-section">
+<summary>Hardware</summary>
+<div class="helper-section-body">
 
-<img src="/assets/images/notes/gripper_image.png" alt="Robotiq 2F-85 Gripper" style="width:100%; max-height:220px; object-fit:cover; border-radius:8px; margin-bottom:1.5rem;">
+<details class="helper-article">
+<summary>Robotiq 2F-85 Gripper</summary>
+<div class="helper-article-body">
 
 | Spec | Value |
 |---|---|
 | Max opening | 85 mm |
 | Payload | 5 kg |
-| Grasp types | External and internal |
 | Power | 24 V DC |
 | Communication | Modbus RTU over RS-485 |
-| Cable | Single device cable (power + comms) |
-| Object detection | Embedded — object detected bit (0/1) via indirect sensing |
 
-**Key notes**
-- Never supply with AC — DC only (24 V)
-- Always respect the 5 kg payload limit
-- For welding environments: ensure gripper is not on the ground path of the welding power source
-- The single cable carries both power and Modbus RTU — no separate comms cable needed
-- Controller model K1995 has limited documentation — check the [official manual](https://assets.robotiq.com/website-assets/support_documents/document/2F-85_2F-140_Instruction_Manual_e-Series_PDF_20190206.pdf)
+- DC only — never AC
+- Single cable carries power + Modbus RTU
+- Object detection via embedded indirect sensing (0/1 bit)
 
----
+</div>
+</details>
 
-### TCP and UDP
+<details class="helper-article">
+<summary>TCP vs UDP</summary>
+<div class="helper-article-body">
 
 | | TCP | UDP |
 |---|---|---|
-| Connection | Connection-oriented (handshake) | Connectionless |
-| Reliability | Guaranteed delivery, ordered | No guarantee, no order |
-| Speed | Slower (overhead) | Faster (low overhead) |
-| Use when | Commands, config, control data | Sensor streams, high-freq data |
+| Connection | Handshake | Connectionless |
+| Reliability | Guaranteed, ordered | No guarantee |
+| Use when | Commands, control | Sensor streams, high-freq |
 
-**In robotics:**
-- Use **TCP** for gripper/robot commands — you need to know the command arrived
-- Use **UDP** for high-frequency sensor data (camera frames, IMU) — speed matters more than guarantee
-- Modbus RTU (gripper) runs over RS-485 serial, not TCP/UDP — separate layer
-
-**Quick Python sockets**
 ```python
 # TCP client
 import socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(("192.168.1.10", 502))
 s.send(b"data")
-response = s.recv(1024)
 
 # UDP sender
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.sendto(b"data", ("192.168.1.10", 5005))
 ```
 
----
+</div>
+</details>
 
-### Wrist Connector
+<details class="helper-article">
+<summary>Wrist Connector (UR)</summary>
+<div class="helper-article-body">
 
-The wrist connector on the UR arm carries power and signal between the robot flange and end-effector (gripper, sensor, tool).
+- D-sub connector on UR flange exposes tool I/O port
+- 2F-85 single cable plugs in directly — carries 24 V + RS-485
+- Pin config: 2× 24 V DC, 2× RS-485 A/B, 1× GND
+- Connector type: M8 or D-sub depending on adapter
 
-- Connection is **port-based** — the D-sub connector on the flange exposes the tool I/O port
-- The 2F-85 uses the **single device cable** plugged into this port — carries 24 V + RS-485
-- **Efficient connection tip:** Use the UR tool I/O port to power the gripper directly — avoids external power supply wiring
-- Pin config: 2 pins for 24 V DC, 2 pins for RS-485 A/B, 1 GND — check UR e-Series manual for exact pinout
-- Connector type: M8 or the D-sub depending on the adapter used
+</div>
+</details>
 
----
-
-### Intel RealSense D435
-
-Stereo depth camera with RGB. Used for scene understanding and object detection.
+<details class="helper-article">
+<summary>Intel RealSense D435</summary>
+<div class="helper-article-body">
 
 | Spec | Value |
 |---|---|
@@ -226,290 +330,147 @@ Stereo depth camera with RGB. Used for scene understanding and object detection.
 | Depth range | 0.2 – 10 m |
 | Depth resolution | Up to 1280 × 720 |
 | RGB resolution | Up to 1920 × 1080 |
-| Depth FPS | Up to 90 fps |
 | Interface | USB 3.1 Gen 1 |
 
-**Install SDK**
 ```bash
-# Ubuntu — add Intel repo first
-sudo apt install librealsense2-dkms librealsense2-utils
 pip install pyrealsense2
 ```
 
-**Basic usage**
 ```python
 import pyrealsense2 as rs
 import numpy as np
 
 pipeline = rs.pipeline()
-config   = rs.config()
+config = rs.config()
 config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
 config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
 pipeline.start(config)
 
-try:
-    frames      = pipeline.wait_for_frames()
-    depth_frame = frames.get_depth_frame()
-    color_frame = frames.get_color_frame()
-    depth_image = np.asanyarray(depth_frame.get_data())
-    color_image = np.asanyarray(color_frame.get_data())
-finally:
-    pipeline.stop()
+frames = pipeline.wait_for_frames()
+depth  = np.asanyarray(frames.get_depth_frame().get_data())
+color  = np.asanyarray(frames.get_color_frame().get_data())
+pipeline.stop()
 ```
 
-**Align depth to colour**
-```python
-align     = rs.align(rs.stream.color)
-frames    = align.process(pipeline.wait_for_frames())
-depth     = frames.get_depth_frame()   # now aligned to RGB frame
-```
+</div>
+</details>
 
----
+</div>
+</details>
 
-## How Tos
+<details class="helper-section">
+<summary>How Tos</summary>
+<div class="helper-section-body">
 
-### DH Calibration Pointers
+<details class="helper-article">
+<summary>DH Calibration</summary>
+<div class="helper-article-body">
 
-DH (Denavit-Hartenberg) calibration corrects the nominal DH parameters of a robot to match the real physical robot.
+Corrects nominal DH parameters to match the real robot. Achieves sub-mm repeatability.
 
-**Why it matters**
-- Nominal URDF/DH params have manufacturing tolerances (~1–2 mm error)
-- After calibration: sub-mm repeatability is achievable
-- Essential before any precision task (insertion, grasping, confined-space work)
+**Process**
+1. Move robot to known configs, record end-effector positions externally
+2. Minimise `||p_measured - FK(q, θ_DH)||` with DH params as free variables
+3. Free variables: `a`, `d`, `α`, `θ_offset` per joint — start with `θ_offset` only
+4. Apply calibrated params to URDF or robot config
 
-**Process overview**
-
-1. **Measure reference poses** — move robot to known joint configurations, record end-effector position with an external measurement tool (e.g. tracking system, CMM, or laser tracker)
-2. **Set up optimisation** — minimise error between measured poses and forward kinematics (FK) using the DH params as free variables
-3. **Optimisation target** — minimise `||p_measured - FK(q, θ_DH)||` over a set of N configurations
-4. **Free variables** — typically `a`, `d`, `α`, `θ_offset` per joint — start by only freeing `θ_offset` (joint zero offsets) as they have the most impact
-5. **Apply calibrated params** — update URDF or robot config file with corrected values
-
-**Practical tips**
-- Use diverse configurations — spread across the workspace, avoid collinear poses
-- At least **3× the number of poses as free parameters** for a well-conditioned problem
-- Lock distal joints first, calibrate from base outward
-- Use `scipy.optimize.least_squares` or a dedicated tool like `robot_calibration` (ROS) or `DQ Robotics` calibration module
+**Tips**
+- Use diverse workspace poses — avoid collinear configurations
+- At least 3× poses vs free parameters
+- Calibrate base outward, lock distal joints first
 - Re-calibrate after any mechanical change or crash
 
-**Dual quaternion approach (DQ Robotics)**
-```python
-# FK residual using DQ Robotics
-from dqrobotics import *
-from dqrobotics.robot_modeling import DQ_SerialManipulatorDH
+</div>
+</details>
 
-# Define robot with current DH params
-robot = DQ_SerialManipulatorDH(dh_matrix)
+</div>
+</details>
 
-# Residual function for optimiser
-def residual(params):
-    # update robot DH params from 'params'
-    # compute FK at each measured config
-    # return vector of position errors
-    ...
-```
+<details class="helper-section">
+<summary>Dev Tools</summary>
+<div class="helper-section-body">
 
----
-
-## Dev Tools
-
-### Git Basics
+<details class="helper-article">
+<summary>Git</summary>
+<div class="helper-article-body">
 
 ```bash
-# Setup
-git config --global user.name  "Name"
-git config --global user.email "email@example.com"
-
-# Daily workflow
-git status                         # what changed
-git add <file>                     # stage specific file
-git add .                          # stage everything
+# Daily
+git status
+git add .
 git commit -m "message"
 git push origin main
 
 # Branching
-git checkout -b feature/my-feature # create + switch
-git checkout main                  # switch back
-git merge feature/my-feature       # merge into current
-git branch -d feature/my-feature   # delete branch
+git checkout -b feature/name
+git merge feature/name
+git branch -d feature/name
 
 # Undo
-git restore <file>                 # discard unstaged changes
-git restore --staged <file>        # unstage
-git reset --soft HEAD~1            # undo last commit, keep changes staged
+git restore <file>             # discard unstaged
+git restore --staged <file>    # unstage
+git reset --soft HEAD~1        # undo last commit, keep staged
 
 # Useful
-git log --oneline                  # compact log
-git diff                           # see unstaged changes
-git stash                          # stash uncommitted work
-git stash pop                      # restore stash
-git pull --rebase origin main      # rebase instead of merge on pull
+git log --oneline
+git stash / git stash pop
+git pull --rebase origin main
 ```
 
----
+</div>
+</details>
 
-### Docker
+<details class="helper-article">
+<summary>Docker</summary>
+<div class="helper-article-body">
 
-**Key concepts**
-- **Image** — blueprint (read-only)
-- **Container** — running instance of an image
-- **Dockerfile** — script to build an image
-- **Volume** — persistent storage mounted into container
-
-**Essential commands**
 ```bash
 # Images
 docker pull ubuntu:22.04
-docker images
-docker rmi image_name
+docker build -t my-image:latest .
 
 # Containers
-docker run -it ubuntu:22.04 bash         # interactive
-docker run -d --name myapp ubuntu:22.04  # detached
-docker run -v /host/path:/container/path # mount volume
-docker run -p 8080:80 nginx              # port mapping
-
-docker ps                                # running containers
-docker ps -a                             # all containers
-docker stop myapp
-docker rm myapp
-docker exec -it myapp bash               # shell into running container
-
-# Build from Dockerfile
-docker build -t my-image:latest .
-docker build --no-cache -t my-image .
-
-# Logs
-docker logs myapp
-docker logs -f myapp                     # follow
+docker run -it ubuntu:22.04 bash
+docker run -d --name myapp -p 8080:80 -v /host:/container ubuntu:22.04
+docker ps / docker ps -a
+docker stop myapp && docker rm myapp
+docker exec -it myapp bash
+docker logs -f myapp
 ```
 
-**Minimal robotics Dockerfile**
+**Minimal Dockerfile**
 ```dockerfile
 FROM ubuntu:22.04
-
-RUN apt-get update && apt-get install -y \
-    python3 python3-pip \
+RUN apt-get update && apt-get install -y python3 python3-pip \
     && rm -rf /var/lib/apt/lists/*
-
 WORKDIR /workspace
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
-
 COPY . .
 CMD ["python3", "main.py"]
 ```
 
-**Docker Compose (multi-container)**
-```yaml
-# docker-compose.yml
-services:
-  robot:
-    build: .
-    volumes:
-      - .:/workspace
-    ports:
-      - "8080:8080"
-    environment:
-      - ROBOT_IP=192.168.1.10
-```
-```bash
-docker compose up         # start
-docker compose down       # stop + remove containers
-docker compose up --build # rebuild before starting
-```
+</div>
+</details>
 
----
+<details class="helper-article">
+<summary>PyCharm</summary>
+<div class="helper-article-body">
 
-### PyCharm
-
-#### Basic Setup
-
-- Set interpreter: `Settings → Project → Python Interpreter → Add Interpreter`
+**Setup**
+- Interpreter: `Settings → Project → Python Interpreter → Add`
 - Run config: `Run → Edit Configurations → + → Python`
-- Useful shortcuts: `Shift+Shift` (search everywhere), `Ctrl+Alt+L` (reformat), `Ctrl+B` (go to definition)
+- Shortcuts: `Shift+Shift` search, `Ctrl+B` go to definition, `Ctrl+Alt+L` reformat
 
----
+**Remote via SSH**
+1. `Settings → Deployment → +` → SFTP, enter host/port/user
+2. `Settings → Interpreter → SSH Interpreter` — pick deployment config
+3. For access anywhere: use Tailscale (`tailscale up` on both machines)
 
-#### Dev Containers (Docker inside PyCharm)
+</div>
+</details>
 
-Requires **PyCharm Professional**.
+</div>
+</details>
 
-1. Install Docker Desktop and the Docker plugin in PyCharm
-2. Open project → `Settings → Build, Execution, Deployment → Docker` → connect to Docker daemon
-3. Create a `Dockerfile` or `docker-compose.yml` in the project root
-4. `Settings → Project → Python Interpreter → Add Interpreter → On Docker` — point to your image
-5. PyCharm syncs files into the container and runs code inside it
-6. Alternatively use `devcontainer.json` (VS Code format — PyCharm also supports it): `File → Open → Select devcontainer.json`
-
-**devcontainer.json example**
-```json
-{
-  "name": "Robotics Dev",
-  "dockerFile": "Dockerfile",
-  "mounts": ["source=${localWorkspaceFolder},target=/workspace,type=bind"],
-  "postCreateCommand": "pip install -r requirements.txt",
-  "customizations": {
-    "jetbrains": {
-      "backend": "PyCharm"
-    }
-  }
-}
-```
-
----
-
-#### Remote Development via SSH (from anywhere)
-
-**Step 1 — Set up SSH on the remote machine**
-```bash
-# On the remote machine (Linux)
-sudo apt install openssh-server
-sudo systemctl enable ssh
-sudo systemctl start ssh
-
-# Check it's running
-sudo systemctl status ssh
-```
-
-**Step 2 — Connect with PyCharm**
-
-1. `Settings → Build, Execution, Deployment → Deployment → +` → SFTP
-2. Enter host IP, port (default 22), username, password or SSH key
-3. Set **Root path** to your project folder on the remote
-4. Set **Mappings**: local path → remote path
-5. `Settings → Project → Python Interpreter → Add Interpreter → SSH Interpreter` — pick the deployment config
-6. PyCharm uploads changes and runs code on the remote machine
-
-**Step 3 — Access from anywhere (outside local network)**
-
-Option A — **SSH port forwarding through a jumphost / VPN**
-```bash
-# On your laptop — forward local port 2222 to remote machine's port 22 via a jumphost
-ssh -L 2222:remote_machine_ip:22 user@jumphost_ip
-# Then connect PyCharm to localhost:2222
-```
-
-Option B — **Direct SSH with public IP** (if remote machine has a public IP)
-```bash
-# Ensure firewall allows port 22 (or custom port)
-sudo ufw allow 22
-# Use the public IP directly in PyCharm deployment config
-```
-
-Option C — **Tailscale (recommended for lab machines)**
-```bash
-# Install on both machines
-curl -fsSL https://tailscale.com/install.sh | sh
-sudo tailscale up
-# Tailscale assigns a stable private IP — use that in PyCharm from anywhere
-```
-
-**SSH key setup (avoid password every time)**
-```bash
-# On your laptop
-ssh-keygen -t ed25519 -C "your_email"
-ssh-copy-id user@remote_ip          # copies public key to remote
-# Test
-ssh user@remote_ip                  # should not ask for password
-```
+</div>
