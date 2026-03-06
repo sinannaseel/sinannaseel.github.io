@@ -1,3 +1,8 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
 name: Deploy Jekyll to GitHub Pages
 
 on:
@@ -24,8 +29,8 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
+          ruby-version: '3.3' # Fixes the public_suffix incompatibility
+          bundler-cache: true # Ensures bundle install runs and caches for speed
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
