@@ -1,6 +1,11 @@
-_site/
-.sass-cache/
+# Jekyll temporary files
 .jekyll-cache/
 .jekyll-metadata
-.DS_Store
+_site/
+
+# Bundler/Ruby files
+.bundle/
 vendor/
+
+# OS generated files
+.DS_Store
