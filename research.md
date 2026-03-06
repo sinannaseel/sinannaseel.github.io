@@ -29,48 +29,14 @@ Developing TAMP algorithms that enable robotic manipulators to re-arrange object
 
 **Smart Arm Stack**, an integrated software framework for robot drivers:
 
-## Interested In:
+## Interested In
 
-<div class="keywords-container">
-<div class="keyword-category">
-<h4>Motion Planning & Control</h4>
-<div class="keyword-tags">
-<span class="tag">Sampling-based Planning</span>
-<span class="tag">Trajectory Optimization</span>
-<span class="tag">Model Predictive Control</span>
-<span class="tag">Dual Quaternion Control</span>
-</div>
-</div>
-<div class="keyword-category">
-<h4>Learning-Based Approaches</h4>
-<div class="keyword-tags">
-<span class="tag">Diffusion Models</span>
-<span class="tag">Reinforcement Learning</span>
-<span class="tag">Imitation Learning</span>
-<span class="tag">Learning from Experience</span>
-</div>
-</div>
-<div class="keyword-category">
-<h4>Optimization Methods</h4>
-<div class="keyword-tags">
-<span class="tag">Convex Optimization</span>
-<span class="tag">Combinatorial Optimization</span>
-<span class="tag">Mixed-Integer Programming</span>
-<span class="tag">Non-linear Optimization</span>
-</div>
-</div>
-<div class="keyword-category">
-<h4>Probabilistic Methods</h4>
-<div class="keyword-tags">
-<span class="tag">Probabilistic Robotics</span>
-</div>
-</div>
-</div>
+**Motion Planning & Control** — Sampling-based Planning, Trajectory Optimization, Model Predictive Control, Dual Quaternion Control
 
-### Books to read : 
+**Learning-Based Approaches** — Diffusion Models, Reinforcement Learning, Imitation Learning, Learning from Experience
 
-* Probabilistic Robotics by Fox
-* Convex Optimization by Stephan Boyd
-* RL by Sutton
+**Optimization** — Convex Optimization, Combinatorial Optimization, Mixed-Integer Programming, Non-linear Optimization
+
+**Probabilistic Methods** — Probabilistic Robotics
 
 

@@ -26,8 +26,8 @@ navigation:
     url: /
   - title: Research
     url: /research
-  - title: Helper
-    url: /helper
+  - title: Blog
+    url: /blog
   - title: Publications
     url: /publications
   - title: Contact
